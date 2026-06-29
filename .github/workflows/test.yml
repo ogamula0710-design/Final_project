@@ -22,6 +22,7 @@ jobs:
 
       - name: Run Postman collection
         run: |
+          mkdir -p newman
           newman run TASKS.postman_collection.json \
             -e ClickUp.postman_environment.json \
             --reporters cli,html \
