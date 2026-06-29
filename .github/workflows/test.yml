@@ -18,14 +18,14 @@ jobs:
           node-version: '18'
 
       - name: Install Newman
-        run: npm install -g newman
+        run: npm install -g newman newman-reporter-html
 
       - name: Run Postman collection
         run: |
           mkdir -p newman
           newman run TASKS.postman_collection.json \
             -e ClickUp.postman_environment.json \
-            --reporters cli,html \
+            -r cli,html \
             --reporter-html-export newman/report.html
           ls -R
 
