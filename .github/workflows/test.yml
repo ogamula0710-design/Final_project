@@ -22,8 +22,8 @@ jobs:
 
       - name: Run Postman collection
         run: |
-          newman run TasksCollection.json \
-            -e TasksEnvironment.json \
+          newman run TASKS.postman_collection.json \
+            -e ClickUp.postman_environment.json \
             --reporters cli,html \
             --reporter-html-export report.html
 
